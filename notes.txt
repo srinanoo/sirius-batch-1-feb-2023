@@ -1,0 +1,181 @@
+Basic Coding Standards
+    - Naming Conventions
+        - 6 cases
+            - lower camel case
+                getElementById
+            - upper camel case
+                GetElementById
+            - lower case
+                getelementbyid
+            - upper case
+                GETELEMENTID
+            - snake case
+                get_element_by_id
+            - dash case
+                get-element-by-id
+    - Code Indent
+    - 
+
+HTML
+    - Syntax:
+        <TAGNAME>
+            ....
+        </TAGNAME>
+
+    - Types
+        - Paired Tag
+            <TAGNAME> = starting / opening tag
+                .... content, container, child...
+            </TAGNAME> = ending / closing tag
+        - Self Closing (Unpaired Tag)
+            <TAGNAME>
+
+        - Block
+        - Inline
+
+SEO
+    - Search Engine Optimization
+        - no more than 1 H1 tag in a single HTML document
+
+
+Attributes
+    - Paired
+    - Unpaired (Self Closing)
+
+    - Core
+        id
+        style
+        class
+        title
+    - Generic
+        align, width, height, border, bgcolor, etc.,
+    - Custom
+        data-<custom name>
+
+IMG
+    - SRC
+        - should not do
+            - USE ABSOLUTE PATH
+        - should use
+            - relative path
+            - full path
+
+Measurements
+    - px
+    - %
+
+Dimension
+    - Width & height
+Resolution
+    - Quality
+        - dpi
+            - Low Res
+                30-40
+            - Med Res
+                72-97
+            - High Res
+                300
+
+LISTS
+    - Unordered
+    - Ordered
+
+
+HTML FORMS
+    - HTTP GET (default)
+        ? (querystring)
+            ?txtUsername=dgsdfgdgs
+            ?txtUsername=sdsdf&paPassword=2342342
+    - HTTP POST
+
+Encoding <-> Decoded
+
+Encryptiom <> Decryption
+
+
+Font File Types
+    - ttf
+    - otf
+    - woff
+    - eot
+    - svg
+
+Responsiveness
+    - Guided Screen sizes (breakpoints - xs, sm, md, lg, xl, xxl)
+        576
+        768
+        992
+        1200
+        1400
+    - Custom
+        600
+        900
+        1200
+
+    - Media Query
+        @media only screen and (max-width: 576px) {
+
+        }
+        or
+        @media and (max-width: 576px) {
+            
+        }
+
+NOTES: 20:02:2023
+
+CSS Position
+    - parent container is position relative
+        - one or all child make it position relative
+            - use spacing+direction properties and see what happens
+            - use direction properties alone and see what happens
+    - parent container is position absolute
+        - one or all child make it position relative
+            - use spacing+direction properties and see what happens
+            - use direction properties alone and see what happens
+
+    - parent container is position absolute
+        - one or all child make it position absolute
+            - use spacing+direction properties and see what happens
+            - use direction properties alone and see what happens
+    - parent container is position absolute/relative
+        - alternate you child make it position relative/absolute
+            - use spacing+direction properties and see what happens
+            - use direction properties alone and see what happens
+
+NOTES: 21-02-2023
+
+CSS Practice:
+    https://100dayscss.com/
+    https://cssbattle.dev/
+
+
+NOTES: 22-02-2023
+
+total=100||||correct=91||||860=D||$||861=C||$||862=C||$||863=C||$||864=B||$||865=B||$||866=A||$||867=C||$||868=B||$||869=A||$||870=C||$||871=B||$||872=C||$||873=B||$||874=A||$||875=C||$||876=B||$||877=B||$||878=C||$||879=A||$||880=B||$||881=B||$||882=C||$||883=A||$||884=C||$||885=B||$||886=B||$||887=A||$||888=A||$||889=C||$||890=A||$||891=C||$||892=D||$||893=C||$||894=A||$||895=B||$||896=C||$||897=D||$||898=B||$||899=C||$||900=D||$||901=A||$||902=A||$||903=A||$||904=C||$||905=C||$||906=B||$||907=D||$||908=C||$||909=B||$||910=C||$||911=D||$||912=A||$||913=A||$||914=C||$||915=B||$||916=C||$||917=A||$||918=C||$||919=D||$||920=B||$||921=D||$||922=D||$||923=C||$||924=C||$||925=C||$||926=D||$||927=B||$||928=B||$||929=A||$||930=B||$||931=A||$||932=C||$||933=C||$||934=D||$||935=D||$||936=A||$||937=B||$||938=A||$||939=C||$||940=B||$||941=A||$||942=D||$||943=B||$||944=B||$||945=C||$||946=A||$||947=C||$||948=D||$||949=B||$||950=B||$||951=B||$||952=B||$||953=A||$||954=D||$||955=A||$||956=C||$||957=A||$||958=B||$||959=C||$||
+
+<TAGNAME>
+    ::before => prepend()
+    .... content / text / container
+    ::after => append()
+</TAGNAME>.
+
+
+NOTES: 27-02-2023
+
+JS Events
+    - Keyboard
+        keypress
+        keydown
+        keyup
+
+        focus
+        blur
+    - Mouse
+        mouseover / mouseout
+        mouseenter / mouseleave
+        mousemove
+
+
+
+RegEx
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions

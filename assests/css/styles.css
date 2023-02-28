@@ -1,0 +1,146 @@
+* {
+    /* margin: 0; */
+    /* padding: 0; */
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+}
+.div1 {
+    background-color: red;
+}
+.div2 {
+    background-color: yellow;
+}
+.div3 {
+    background-color: green;
+}
+.div4 {
+    background-color: pink;
+}
+
+.mainContainer {
+    background-color: yellow;
+}
+.leftContainer {
+    background-color: greenyellow;
+    width: 25%;
+    position: fixed;
+    height: 100vh;
+}
+.rightContainer {
+    background-color: pink;
+    width: 73%;
+    margin-left: 27%;
+}
+.menuFooter {
+    background-color: black;
+    color: wheat;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+.menuFooter div {
+    display: inline-block;
+}
+.stickyContainer {
+    background-color: purple;
+    position: sticky;
+    bottom: 40px;
+}
+.flexRow {
+    background-color: pink;
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexRow div {
+    /* width: 33.3333333%; */
+    background-color: purple;
+    color: wheat;
+    margin: 5px;
+}
+.transformContainer {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 50px 0;
+    /* transition-property: height, width;
+    transition-duration: 5s, 5s; */
+    
+    transition: width 5s;
+}
+.t1 {
+    transition-timing-function: linear;
+}
+.t2 {
+    transition-timing-function: ease;
+}
+.t3 {
+    transition-timing-function: ease-in;
+}
+.t4 {
+    transition-timing-function: ease-out;
+}
+.t5 {
+    transition-timing-function: ease-in-out;
+}
+/* .transformContainer:hover {
+    width: 400px;
+} */
+.transformContainer img {
+    opacity: 0;
+    display: none;
+    transition: opacity 5s;
+}
+.transformContainer:hover img {
+    opacity: 1;
+    display: block;
+    /* transform: scale(1.5, 1.5); */
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+.menu > div {
+    background-color: yellow;
+    padding: 10px;
+}
+.menu .dropdown {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 0, 0.315);
+    margin-top: 10px;
+    margin-left: -10px;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: godown 300ms ease-in-out 3;
+    /* transform-origin: top center; */
+}
+.menu .dropdown a {
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
+}
+.menu > div:hover .dropdown {
+    display: block;
+}
+
+@keyframes godown {
+    0% {
+        transform: scaleX(0);
+        background: red;
+    }
+    30% {
+        transform: scaleX(1.5);
+        background: purple;
+    }
+    80% {
+        transform: scaleX(1.1);
+        background: green;
+    }
+    100% {
+        transform: scaleX(1);
+        background: pink;
+    }
+}

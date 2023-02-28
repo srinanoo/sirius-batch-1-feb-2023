@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div1 {
+            color: red;
+            background-color: yellow;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #div1 div {
+            background-color: purple;
+            color: pink;
+            margin: 5px;
+        }
+        .blue {
+            color: blue;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <div>Div 1 Container</div>
+    <p id="p2">Paragraph 1 Container</p>
+    <h3 class="h3">Heading 3 Container</h3>
+    <input type="text" id="txt1" value="Dinesh"> -->
+
+    <input type="text" id="txtNation" placeholder="Nation"><br>
+    <input type="text" id="txtPopulation" placeholder="Population"><br><br>
+    <div id="div1"></div>
+    <button id="btnClick">Click</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+    //    $(document).ready(function() {
+    //     console.log("jQuery has been started.")
+    //    }); 
+
+    //    $.noConflict();
+    // console.log(document.querySelector("div").innerText);
+    // console.log(document.querySelector("#p2").innerHTML);
+    // console.log(document.querySelector(".h3").innerHTML);
+
+    // console.log(document.querySelector("#txt1").value);
+
+    jQuery(document).ready(function($) {
+        // console.log($("div").text());
+        // console.log($("#p2").text());
+        // console.log($(".h3").text());
+
+        // console.log($("#txt1").val());
+
+        // $("div").addClass("div1");
+        // $("#p2").css({"background-color": "red", "color": "yellow"});
+
+        // $("#btnClick").click(function() {
+        //     $(".h3").toggleClass("blue");
+        //     $("div").removeClass("div1");
+        // })
+
+        $("#btnClick").click(function() {
+            // $("#div1").load("sample.html");
+
+            // $.ajax(
+            //     {
+            //         url: "https://catfact.ninja/fact",
+            //         success: function(data) {
+            //             console.log(data);
+            //             if(data) {
+            //                 console.log(data.fact);
+            //                 $("#div1").append("<p><strong>Data:</strong>"+data.fact+"</p><p><strong>Length</strong>" + data.length + "</p>");
+            //             }
+            //         },
+            //         error: function(err) {
+            //             console.log(err.responseText);
+            //         }
+            //     }
+            // )
+
+            var button = document.createElement("button");
+            button.innerHTML = "New Button";
+            $("#div1").append("<p>This is a test Paragraph</p>");
+
+            varNation = $("#txtNation").val();
+            varPopulation = $("#txtPopulation").val();
+
+            console.log(varNation, "varNation");
+            console.log(varPopulation, "varPopulation");
+
+            if(varNation!="" && varPopulation!="") {
+                $.ajax(
+                    {
+                        url: "https://datausa.io/api/data?drilldowns="+varNation+"&measures="+varPopulation,
+                        type: "GET",
+                        // data: {FormData}
+                        beforeSend: function() {
+                            $('#btnClick').after('<div class="wait">&nbsp;<img src="assests/images/ajax-loader.gif" alt="" /></div>');
+                        },
+                        complete: function() {
+                            $('.wait').remove();
+                        },
+                        success: function(data) {
+                            console.log(data);
+                            output = "";
+                            for(temp in data.data) {
+                                console.log(data.data[temp]);
+                                output += "<div class='stats'>"
+                                    output += "<p>Nation: "+data.data[temp].Nation+"</p>";
+                                    output += "<p>Population: "+data.data[temp].Population+"</p>";
+                                output += "</div>"
+                            }
+                            $("#div1").html(output);
+                        },
+                        error: function(err) {
+                            console.log(err.responseText)
+                        }
+                    }
+                )
+            }
+
+            
+
+        });
+
+        // $.ajax({
+        //     url: "https://api.tvmaze.com/search/shows?q=dogs",
+        //     success: function(data) {
+        //         if(data) {
+        //             console.log(data);
+        //             for(temp in data) {
+        //                 for(temp1 in data[temp]) {
+        //                     for(temp2 in data[temp][temp1]) {
+        //                         console.log(temp2, data[temp][temp1][temp2]);
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // });
+
+        // $.ajax({url: "https://catfact.ninja/fact", success: function(data) {
+        //     console.log(data);
+        //     if(data) {
+        //         console.log(data.fact);
+        //         console.log(data.length)
+        //     }
+        // }});
+
+    //     fetch("https://catfact.ninja/fact")
+    //         .then(data=>data.json())
+    //         .then(data => console.log(data));
+    });
+
+    //    $(function() {
+    //     console.log("jQuery without the document ready check.")
+    //    });
+    </script>
+</body>
+</html>

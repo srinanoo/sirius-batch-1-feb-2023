@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img {
+            max-width: 100%;
+        }
+        .cls {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript</h1>
+
+    <!-- <input type="text" id="txt1"><br>
+    <input type="text" id="txt2"><br>
+    <input type="text" id="txt3"><br>
+    <input type="text" id="txt4"><br>
+    <input type="text" id="txt5"><br>
+    <input type="text" id="txt6"><br> -->
+
+    <!-- <textarea id="taMessage"></textarea>
+    <div id="counter"></div> -->
+
+    <!-- <button id="btnClick">Click</button> -->
+
+    <!-- <form>
+        <input type="text" name="txtUsername" id="txtUsername" class="clsInput"><br>
+        Subjects:<br>
+        <input type="checkbox" name="chkSubjects" value="HTML"> HTML<br>
+        <input type="checkbox" name="chkSubjects" value="CSS"> CSS<br>
+        <input type="checkbox" name="chkSubjects" value="JS"> HTML<br>
+        <input type="checkbox" name="chkSubjects" value="ReactJs"> ReactJs<br>
+        <input type="checkbox" name="chkSubjects" value="NodeJs"> NodeJs<br>
+
+        <br>
+        <input type="button" value="Click" onclick="testFunc();">
+    </form> -->
+
+    <!-- <div class="clsDiv">
+        Div Container
+    </div>
+    <p class="clsP">
+        Paragraph <strong>Content</strong> goes here...
+    </p> -->
+
+    <!-- <div id="div1">
+        <img src="assests/images/arrow2.png" class="img1">
+    </div>
+    <div id="div2">
+        <img src="assests/images/bullet.png" class="img2">
+    </div> -->
+
+    <!-- <div class="div1">
+        <h3 class="h3">Heading 3</h3>
+        <p class="p1">Paragraph</p>
+        <div class="div2">Div Container</div>
+    </div>
+
+    <button id="btnClick">Click</button>
+
+
+    <br><br>
+
+    <div class="divTemp">
+        <button class="clsButton" data-dinesh="1" value="1">1st Button</button>
+        <button class="clsButton" data-dinesh="2" value="2">2nd Button</button>
+        <button class="clsButton" data-dinesh="3" value="3">3rd Button</button>
+        <button class="clsButton" data-dinesh="4" value="4">4th Button</button>
+        <button class="clsButton" data-dinesh="5" value="5">5th Button</button>
+        <button class="clsButton" data-dinesh="6" value="6">6th Button</button>
+
+    </div> -->
+    
+    <!-- <div id="div1">
+        This is a test message...
+    </div>
+    <div id="div2" style="border: solid; height: 200px; width: 200px;">
+    </div>
+    <div id="div3"></div> -->
+
+    <!-- City:<br>
+    <select id="slCity">
+        <option value="1">Chennai</option>
+        <option value="2">Mumbai</option>
+        <option value="3">Kolkata</option>
+        <option value="4">Delhi</option>
+        <option value="5">Hyderabad</option>
+    </select>
+    <br>
+
+    State:<br>
+    <select id="slState">
+        <option value="1">Tamilnadu</option>
+        <option value="2">Maharastra</option>
+        <option value="3">West Bengal</option>
+        <option value="4">New Delhi</option>
+        <option value="5">Telengana</option>
+    </select> -->
+    
+    <!-- <div id="shapes">
+        <button id="square">Square</button>
+        <button id="circle">Circle</button>
+        <button id="triangle">Triangle</button>
+    </div> -->
+
+    <!-- <div id="time"></div>
+
+    <button id="btnStart">Start</button>
+    <button id="btnStop">Stop</button>
+
+    <br><br>
+
+    <div id="div1"></div>
+    <button id="btnStopTimeout">Stop Timeout</button> -->
+
+    <!-- <div id="div1"></div> -->
+
+    <!-- <form name="form1" onsubmit="return validate();">
+        <div id="err"></div>
+        <input type="text" id="txtEmail" name="txtEmail" placeholder="Email:"><span id="txtEmailErr"></span>
+        <input type="text" id="paPassword" name="paPassword" placeholder="Password:"><span id="txtPassErr"></span>
+        <br>
+        <button id="btnValidate">Validate</button>
+    </form>
+
+    <a href="https://ndtv.com" onclick="validate(event);">Click Here</a> -->
+
+    <button id="btnClick">Click</button>
+
+    <script>
+        function calc(val1) {
+            calc.add = function(a, b) {
+                return a+b;
+            }
+            calc.sub = 10-5;
+            calc.temp = val1
+        }
+        calcCustomObj = new calc(50);
+
+        class GrandClass {
+            constructor(gPN, gPi) {
+                this.grandParentName = gPN;
+                this.grandParentId = gPi;
+            }
+        }
+
+        class ParentClass extends GrandClass {
+            constructor(parentName, parentId, gPN, gPi) {
+                super(gPN, gPi);
+                this.parentName = parentName;
+                this.parentId = parentId;
+            }
+
+            getParentDetails() {
+                return "Parent is : " + this.parentName + ", id is: " + this.parentId;
+            }
+        }
+
+        class ChildClass extends ParentClass {
+            constructor(name, id, pN, pI, gN, gI) {
+                super(pN, pI, gN, gI);
+                this.name = name;
+                this.id = id;
+            }
+
+            getName() {
+                this.setName("Satish");
+                return "My name is " + this.name;
+            }
+
+            setName(newName) {
+                this.name = newName;
+            }
+        }
+        clsChild = new ChildClass("Dinesh", 10000, "Dinesh Parent", "P01", "GP", "GPID1");
+        // console.log(clsChild.getName());
+        // // clsChild.setName("Tony");
+        // console.log(clsChild.getName());
+        // clsChild1 = new ChildClass("Lokesh", 20000);
+        // console.log(clsChild1.getName());
+        // console.log(clsChild.getName());
+
+        // console.log(clsChild.id);
+        // console.log(clsChild.parentName);
+        // console.log(clsChild.getParentDetails());
+        // console.log(clsChild.grandParentName);
+        // console.log(clsChild.grandParentId);
+
+
+        // objShapes = {
+        //     "shape": "circle",
+        //     "size": 10
+        // }
+        // localStorage.setItem("shapes", JSON.stringify(objShapes));
+
+        // var temp = JSON.parse(localStorage.getItem("shapes"));
+        // console.log(temp);
+        // for(l in temp) {
+        //     console.log(temp[l]);
+        // }
+
+
+        // function car(name) {
+        //     this.name = name;
+        //     this.brand = "Suzuki";
+        // }
+        // car.prototype.getCarDetails = function() {
+        //     return this.name + " - " + this.brand;
+        // };
+        // carObj = new car("WagonR");
+        // // console.log(carObj.name);
+        // // console.log(carObj.brand);
+        // // console.log(carObj.__proto__);
+        // console.log(carObj.getCarDetails());
+        // carObj = new car("Brezza");
+        // // console.log(carObj.name);
+        // // console.log(carObj.brand);
+        // console.log(carObj.getCarDetails());
+
+        // var x = 10;
+        // function add1() {
+        //         var y = 5;
+        //         return x + y;
+        // }
+        // function add2() {
+        //         var x = 2;
+        //         return add1();
+        // }
+        // // console.log(add1(), "add1()");
+        // console.log(add2(), "add2()");
+
+        // var x = 10;
+        // function add3(temp) {
+        //         // var x = temp;
+        //         function add4() {
+        //             var y = 5;
+        //             return x + y;
+        //         }
+        //         return add4();
+        // }
+        // console.log(add3(1), "add3()");
+
+        // var confirmation = confirm("Are you sure to delete?");
+        // if(confirmation) {
+
+        // } else {
+
+        // }
+
+        var name = prompt("Please enter your name:");
+        console.log(typeof name);
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        // var x = 10;
+        // function add1() {
+        //     var y = 5;
+        //     return x + y;
+        // }
+        // function add2() {
+        //     var x = 2;
+        //     return add1();
+        // }
+        // console.log(add1(), "add1()");
+        // console.log(add2(), "add2()");
+
+
+        // function add3(temp) {
+        //     var x = temp;
+        //     function add4() {
+        //         var y = 5;
+        //         return x + y;
+        //     }
+        //     return add4();
+        // }
+        // console.log(add3(1), "add3()");
+
+        // function car(name) {
+        //     this.name = name;
+        // }
+        // car.prototype.brand = "Maruti";
+        // car.prototype.getCar = function() {
+        //     return this.brand + " - " + this.name;
+        // }
+        // carObj = new car("WagonR");
+        // console.log(carObj.name);
+        // console.log(carObj.brand);
+
+        // carObj = new car("Brezza");
+        // console.log(carObj.__proto__);
+        // console.log(carObj.getCar());
+        
+
+ 
+// function main() {
+//   console.log(foo()); // Static scope: 15; Dynamic scope: 15
+//   console.log(bar()); // Static scope: 15; Dynamic scope: 7
+//   return 0;
+// }
+// console.log(main());
+
+        // calc = {
+        //     add: function(a, b) {
+        //         return a+b;
+        //     }
+        // }
+
+        // calcObj = new Object();
+        // calcObj.add = 10+50;
+
+        // function calc(val1) {
+        //     calc.add = function(a, b) {
+        //         return a+b;
+        //     }
+        //     calc.sub = 10-5;
+        //     calc.temp = val1
+        // }
+        // calcCustomObj = new calc(50);
+        // calcCustomObj.add(4,5);
+        // calcCustomObj.sub;
+        // calcCustomObj.temp;
+
+        // testArr = [1,2,3,4,5];
+        // testArrObj = new Array(1,2,3,4,5);
+
+        // testFunc = ()=> {
+        //     console.log("This is a normal function");
+        // }
+
+        // testFunc = function() {
+        //     console.log("This is a normal function");
+        // }
+
+        // function testFunc() {
+        //     console.log("This is a normal function");
+        // }
+        // testFunc();
+
+        // a = 10;
+
+        // (function() {
+        //     console.log("Immediately invoked function");
+        //     console.log(a, " - a's value");
+        // }(a));
+
+
+
+        // function validate(e) {
+        //     var flag = true;
+        //     var errMsg = "";
+        //     var txtEmail = document.getElementById("txtEmail").value;
+        //     if(txtEmail=="") {
+        //         document.querySelector("#txtEmailErr").innerHTML = "Please enter the Name";
+        //         errMsg += "<p>Please enter the Name</p>";
+        //         flag = false;
+        //     } else {
+        //         document.querySelector("#txtEmailErr").innerHTML = "";
+        //     }
+        //     var paPassword = document.getElementById("paPassword").value;
+        //     if(paPassword=="") {
+        //         document.querySelector("#txtPassErr").innerHTML = "Please enter the Password";
+        //         flag = false;
+        //         errMsg += "<p>Please enter the Password</p>";
+        //     } else {
+        //         document.querySelector("#txtPassErr").innerHTML = "";
+        //     }
+
+        //     if(flag)
+        //         return true;
+        //     else {
+        //         document.querySelector("#err").innerHTML = errMsg;
+        //         return false;
+        //     }
+                
+
+        //     // e.preventDefault();
+
+        //     // console.log(e.target.href);
+        //     // location.href = e.target.href;
+        //     // var txtEmail1 = document.form1.txtEmail.value;
+        //     // var txtEmail2 = document.getElementById("txtEmail").value;
+
+        //     // console.log(txtEmail1, "First Form")
+        //     // console.log(txtEmail2, "Using DOM")
+
+        //     // document.form1.action = "";
+        //     // // document.form1.submit();
+        //     // return false;
+        // }
+
+        // (XXX)-XXX-XXXX
+
+        // document.querySelector("#btnValidate").addEventListener("click", ()=>{
+        //     var txtEmail = document.querySelector("#txtEmail").value;
+
+        //     var expEmail = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/
+            
+        //     console.log(expEmail.exec(txtEmail));
+        //     console.log(txtEmail.match(expEmail));
+        //     console.log(expEmail.test(txtEmail));
+        // });
+
+        // function writeOutput(res) {
+        //     document.getElementById("div1").innerHTML = res;
+        // }
+
+        // function addNumbers(a, b, writeOutput) {
+        //     result = a+b;
+        //     writeOutput(result);
+        // }
+        // addNumbers(5, 6, writeOutput);
+
+        // var timer;
+        // document.querySelector("#btnStart").addEventListener("click", ()=>{
+        //     timer = setInterval(() => {
+        //         let dt = new Date();
+        //         document.querySelector("#time").innerHTML = dt.toLocaleTimeString();
+        //     }, 1000);
+        // });
+
+        // document.querySelector("#btnStop").addEventListener("click", ()=>{
+        //     clearInterval(timer);
+        // });
+
+        
+
+        // var timeout = setTimeout(()=> {
+        //     document.querySelector("#div1").innerHTML = "This is executed only once";
+        // }, 5000);
+
+        
+
+        // try {
+        //     console.log(a);
+        // } catch(err) {
+        //     document.querySelector("#div1").innerHTML = err.message;
+        // } finally {
+
+        // }
+        
+        
+
+        // currShape = localStorage.getItem("shapes");
+        // document.querySelector("#"+currShape).style.backgroundColor = "red";
+
+        // document.querySelector("#shapes").addEventListener("click", (event)=>{
+        //     console.log(event.target.id);
+        //     localStorage.setItem("shapes", event.target.id);
+        //     currShape = localStorage.getItem("shapes");
+        //     document.querySelector("#"+currShape).style.backgroundColor = "red";
+        // });
+
+        // document.querySelector("#slCity").addEventListener("change", ()=> {
+        //     document.querySelector("#slState").value = document.querySelector("#slCity").value;
+        // });
+
+        // document.querySelector("#div2").addEventListener("mousemove", (event)=> {
+        //     var x = event.clientX;
+        //     var y = event.clientY;
+        //     document.querySelector("#div3").innerHTML = "X - " + x + ", Y - "+ y;
+        // });
+
+        // document.querySelector("#div1").addEventListener("mouseenter", ()=> {
+        //     var div1 = document.querySelector("#div1")
+        //     div1.innerHTML = "This text has been changed";
+        //     div1.setAttribute("style", "background-color: red; color: white;");
+        // });
+        // document.querySelector("#div1").addEventListener("mouseleave", ()=> {
+        //     var div1 = document.querySelector("#div1")
+        //     div1.innerHTML = "Its reverted back";
+        //     div1.setAttribute("style", "background-color: green; color: white;");
+        // });
+
+        // document.querySelector("#txt1").focus();
+
+        // document.querySelector("#txt4").addEventListener("focus", () => {
+        //     var txt4 = document.querySelector("#txt4");
+        //     if(txt4.value == "") {
+        //         txt4.style.backgroundColor = "red";
+        //         txt4.style.color = "white";
+        //         txt4.focus();
+        //     } else {
+        //         txt4.style.backgroundColor = "green";
+        //         txt4.style.color = "white";
+        //     }
+        // });
+        // document.querySelector("#txt4").addEventListener("blur", () => {
+        //     var txt4 = document.querySelector("#txt4");
+        //     if(txt4.value == "") {
+        //         txt4.style.backgroundColor = "red";
+        //         txt4.style.color = "white";
+        //         txt4.focus();
+        //     } else {
+        //         txt4.style.backgroundColor = "green";
+        //         txt4.style.color = "white";
+        //     }
+        // })
+
+        // document.querySelector(".divTemp").addEventListener("click", call);
+        // var btnTest = document.querySelectorAll(".clsButton");
+        // for(i=0; i < btnTest.length; i++) {
+        //     btnTest[i].onclick = call;
+        // }
+        // function call(event) {
+        //     console.log(event.target.value);
+        //     // localStorage.setItem("username", "Dinesh");
+        //     // localStorage.removeItem("username");
+
+        //     // if(localStorage.getItem("username")!="") console.log(localStorage.getItem("username"));
+
+        //     sessionStorage.setItem("username", "Dinesh");
+        // }
+
+        // document.getElementById("taMessage").addEventListener("keyup", () => {
+        //     var taMessageCounter = document.querySelector("#taMessage").value.length;
+        //     document.querySelector("#counter").innerHTML = taMessageCounter;
+        // });
+
+        // document.getElementById("btnClick").addEventListener("click", () => {
+        //     var taMessageCounter = document.querySelector("#taMessage").value.length;
+        //     document.querySelector("#counter").innerHTML = taMessageCounter;
+
+
+            // var div1 = document.querySelector(".div1");
+            // var div2 = document.querySelector(".div2");
+            // var h3 = document.querySelector(".h3");
+            // var p1 = document.querySelector(".p1");
+
+            // var h4 = document.createElement("h4");
+            // h4.innerText = "This is H4 tag created";
+            // h4.style.color = "red";
+            // h4.setAttribute("id", "h4");
+            // h4.setAttribute("data-dinesh", "testString");
+
+            // div1.insertBefore(h4, p1);
+
+            // var btn = document.createElement("button");
+            // btn.innerHTML = "New Button";
+            // btn.addEventListener("click", ()=>{
+            //     console.log("Newly Generated Button is clicked");
+            // });
+            // div1.append(btn);
+
+            // var img1 = document.querySelector(".img1");
+            // var img2 = document.querySelector(".img2");
+
+            // temp1 = img1.src;
+            // temp2 = img2.src;
+
+            // console.log(img1.src);
+            // console.log(img2.src);
+
+            // console.log(img1.getAttribute("src"));
+            // console.log(img2.getAttribute("src"));
+
+            // img1.src = temp2;
+            // img2.src = temp1;
+
+
+            // var div0 = document.querySelector(".clsDiv");
+            // console.log(div0.innerText);
+            // console.log(div0.innerHTML);
+            // var div1 = document.querySelector("#div1");
+            // div1.innerText = div1.innerText;
+            // div1.setAttribute("class", "cls");
+            // console.log(div1.getAttribute("class"));
+
+            // var p1 = document.querySelector(".clsP");
+            // console.log(p1.innerText);
+            // console.log(p1.innerHTML);
+            // var div2 = document.querySelector("#div2");
+            // div2.innerHTML = p1.innerHTML;
+            // div2.style.backgroundColor = "red";
+        // });
+        
+
+        // function testFunc() {
+        //     // old forms way
+        //     // document.<form name>.<input control name>.value
+        //     // var txtUserName = document.loginForm.txtUsername.value;
+        //     // console.log(txtUserName);
+
+        //     // document.forms[index].<input control name>.value
+        //     // var txtUserName = document.forms[0].txtUsername.value;
+        //     // console.log(txtUserName);
+
+        //     // 4 traditional methods
+        //     // document.getElementById("<id attribute value>").value
+        //     // var txtUserName = document.getElementById("txtUsername").value;
+
+        //     // document.getElementsByTagName("<name of the tag>")[].value
+        //     // var txtUserName = document.getElementsByTagName("input")[0].value;
+
+        //     // document.getElementsByClassName("<class attribute value>").value
+        //     // var txtUserName = document.getElementsByClassName("clsInput")[0].value;
+
+        //     // document.getElementsByName("<name attribute value>").value
+        //     // var txtUserName = document.getElementsByName("txtUsername")[0].value;
+
+        //     // 2 modern methods
+        //     // document.querySelector(<css selectors>).value
+        //     // var txtUserName = document.querySelector(".clsInput").value;
+
+        //     // document.querySelectorAll(<css selectors>)[0].value
+        //     // var txtUserName = document.querySelectorAll(".clsInput")[0].value;
+        //     // console.log(txtUserName);
+
+        //     var chkSubjects = document.getElementsByName("chkSubjects");
+        //     console.log(chkSubjects.length);
+        //     chkSubjects.forEach((v, i) => {
+        //         if(v.checked)
+        //             console.log(v.value, " - value");
+        //     });
+
+        //     for(let i=0; i<chkSubjects.length; i++) {
+        //         if(chkSubjects[i].checked)
+        //             console.log(chkSubjects[i].value);
+        //     }
+        // }
+    </script>
+    
+</body>
+</html>

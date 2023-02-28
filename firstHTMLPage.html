@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First HTML Page</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- External Styles/CSS -->
+        <!-- <link href="assests/css/styles.css" rel="stylesheet"> -->
+        
+
+        <!-- Internal Styles/CSS -->
+        <style>
+            * {
+                /* margin: 0; */
+                /* padding: 0; */
+                box-sizing: border-box;
+            }
+            img {
+                max-width: 100%;
+            }
+            .div1 {
+                background-color: red;
+            }
+            .div2 {
+                background-color: yellow;
+            }
+            .div3 {
+                background-color: green;
+            }
+            .div4 {
+                background-color: pink;
+            }
+
+            .mainContainer {
+                background-color: yellow;
+            }
+            .leftContainer {
+                background-color: greenyellow;
+                width: 25%;
+                position: fixed;
+                height: 100vh;
+            }
+            .rightContainer {
+                background-color: pink;
+                width: 73%;
+                margin-left: 27%;
+            }
+            .menuFooter {
+                background-color: black;
+                color: wheat;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                z-index: 1;
+            }
+            .menuFooter div {
+                display: inline-block;
+            }
+            .stickyContainer {
+                background-color: purple;
+                position: sticky;
+                bottom: 40px;
+            }
+            .flexRow {
+                background-color: pink;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .flexRow div {
+                /* width: 33.3333333%; */
+                background-color: purple;
+                color: wheat;
+                margin: 5px;
+            }
+            .transformContainer {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                margin: 50px 0;
+                /* transition-property: height, width;
+                transition-duration: 5s, 5s; */
+                
+                transition: width 5s;
+            }
+            .t1 {
+                transition-timing-function: linear;
+            }
+            .t2 {
+                transition-timing-function: ease;
+            }
+            .t3 {
+                transition-timing-function: ease-in;
+            }
+            .t4 {
+                transition-timing-function: ease-out;
+            }
+            .t5 {
+                transition-timing-function: ease-in-out;
+            }
+            /* .transformContainer:hover {
+                width: 400px;
+            } */
+            .transformContainer img {
+                opacity: 0;
+                display: none;
+                transition: opacity 5s;
+            }
+            .transformContainer:hover img {
+                opacity: 1;
+                display: block;
+                /* transform: scale(1.5, 1.5); */
+            }
+
+            .menu {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .menu > div {
+                background-color: yellow;
+                padding: 10px;
+            }
+            .menu .dropdown {
+                display: none;
+                position: absolute;
+                background-color: rgba(255, 255, 0, 0.315);
+                margin-top: 10px;
+                margin-left: -10px;
+                /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+                animation: godown 300ms ease-in-out 3;
+                /* transform-origin: top center; */
+            }
+            .menu .dropdown a {
+                text-decoration: none;
+                padding: 5px 10px;
+                display: inline-block;
+            }
+            .menu > div:hover .dropdown {
+                display: block;
+            }
+
+            @keyframes godown {
+                0% {
+                    transform: scaleX(0);
+                    background: red;
+                }
+                30% {
+                    transform: scaleX(1.5);
+                    background: purple;
+                }
+                80% {
+                    transform: scaleX(1.1);
+                    background: green;
+                }
+                100% {
+                    transform: scaleX(1);
+                    background: pink;
+                }
+            }
+            .fa-brands.fa-facebook {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>JavaScript</h1>
+
+        <i class="fa-brands fa-facebook"></i>
+
+        <!-- External JS -->
+        <script src="assests/js/scripts.js"></script>
+
+        <script>
+            // Internal JS
+
+            // a = 10;
+            // function testFunc() {
+            //     console.log(a, "inside function");
+            //     b = 20;
+            //     console.log(b, "inside function");
+            // }
+            // testFunc();
+            // console.log(a, "outside function");
+            // console.log(b, "outside function");
+
+            // var a = 10;
+            // console.log(a);
+            // var a = 30;
+            // console.log(a);
+
+            // let b = 20;
+            // console.log(b);
+            // let b = 40;
+            // console.log(b);
+
+            // for(var i=0; i<5; i++) {
+
+            // }
+            // console.log(i);
+
+            // for(j=0; j<5; j++);
+            // console.log(j);
+
+            // {
+            //     let b = 20;
+
+            //     function testFunc(){
+            //         console.log(b);
+            //     }
+            //     testFunc();
+            // }
+            
+            // const c = 10;
+
+            // a = 10;
+            // function testFunc() {
+            //     b = 20;
+            //     console.log(b);
+            // }
+            // testFunc();
+            // console.log(b);
+
+            // c = 30;
+            // console.log(c);
+            // let c;
+            // console.log(c);
+
+            // a = 20;
+            // b = 20;
+            // if(a>=b) console.log("A is greater than or equals to B"); else console.log("A is lesser than B");
+            
+            // (a>=b) ? console.log("A is greater than or equals to B") : console.log("A is lesser than B");
+
+            // color = "white";
+            // if(color=="white") {
+            //     console.log("White");
+            // } else if(color=="black") {
+            //     console.log("Black");
+            // } else if(color=="Red") {
+            //     console.log("Red");
+            // } else {
+            //     console.log("No Matching Colour");
+            // }
+
+            // switch(color) {
+            //     case "white":
+            //         console.log("White");
+            //         break;
+            //     case "Black":
+            //         console.log("Black");
+            //         break;
+            //     case "Red":
+            //         console.log("Red");
+            //         break;
+            //     default:
+            //         console.log("No Matching Colour");
+            // }
+
+            // console.time();
+            // a = 1;
+            // while(a<=10) {
+            //     console.log(a++);
+            // }
+            // console.timeEnd();
+            
+            // console.time();
+            // for(let b=1; b<=10; b++) {
+            //     console.log(b);
+            // }
+            // console.timeEnd();
+
+            employeeArr = [1000, "Dinesh", true, "10000"];
+            // console.log("---- Direct Way ----");
+            // console.log(employeeArr[0]);
+            // console.log(employeeArr[1]);
+            // console.log(employeeArr[2]);
+            // console.log(employeeArr[3]);
+
+            // console.log("---- While ----");
+            // console.time();
+            // i = 0;
+            // while(i<employeeArr.length) {
+            //     console.log(employeeArr[i++]);
+            // }
+            // console.timeEnd();
+
+            // console.log("---- for (traditional) ----");
+            // console.time();
+            // for(i=0; i<employeeArr.length; i++) {
+            //     console.log(employeeArr[i]);
+            // }
+            // console.timeEnd();
+
+            // console.log("---- for (traditional) Ver2 ----");
+            // console.time();
+            // for(i=employeeArr.length-1; i>=0; i--) {
+            //     console.log(employeeArr[i]);
+            // }
+            // console.timeEnd();
+
+            // console.log("---- for (traditional) Ver3 ----");
+            // console.time();
+            // b=employeeArr.length;
+            // for(i=0; i<b; i++) {
+            //     console.log(employeeArr[i]);
+            // }
+            // console.timeEnd();
+
+            // console.log("---- for..in ----");
+            // console.time();
+            // for(temp in employeeArr) {
+            //     console.log(employeeArr[temp]);
+            // }
+            // console.timeEnd();
+
+            // console.log("---- for..of ----");
+            // console.time();
+            // for(temp of employeeArr) {
+            //     console.log(temp);
+            // }
+            // console.timeEnd();
+
+            // console.log("---- forEach ----");
+            // console.time();
+            // employeeArr.forEach(v => console.log(v, "v"));
+            // console.timeEnd();
+
+            // console.log("---- map ----");
+            // console.time();
+            // res = employeeArr.map(v => v + " - updated");
+            // console.log(employeeArr);
+            // console.log(res);
+            // console.timeEnd();
+
+            // ageOfPeople = [15, 25, 32, 10, 7, 56, 43, 28, 33, 9];
+            // i = 0;
+            // count = 0;
+            // while(i<ageOfPeople.length) {
+            //     if(ageOfPeople[i]>=18) {
+            //         console.log(ageOfPeople[i]);
+            //         count++;
+            //     }
+            //     if(count>5) break;
+            //     i++;
+            //     console.log(i);
+            // }
+
+            // function testFunc(val1=1, val2=1) { // function definition line
+            //     temp1 =val1 + val2 
+            //     return "This addition is done!";
+            // }
+            // temp = testFunc(); /// function invoking line
+
+            // console.log(temp * 2);
+
+            // rows = 5;
+            // cols = 5;
+            
+            // function generateTable(rows=0, cols=0) {
+            //     if((rows<=0 || cols<=0) || (typeof rows!='number' || typeof cols!='number'))
+            //         document.write("Please enter/send at least 1 row and column to return the Table!")
+            //     else {
+            //         output = "";
+            //         output += "<table border=1>";
+            //         for(let i = 1; i <= rows; i++) {
+            //             output += "<tr>";
+            //             for(let j = 1; j <= cols; j++) {
+            //                 output += "<td>" + i + "" + j + "</td>";
+            //             }
+            //             output += "</tr>";
+            //         }
+            //         output += "</table>";
+
+            //         return output;
+            //     }
+
+            // }
+
+            // generateTable1();
+            // arr.forEach(generateTable1);
+            // generateTable1 = () => {
+            //     if((rows<=0 || cols<=0) || (typeof rows!='number' || typeof cols!='number'))
+            //         document.write("Please enter/send at least 1 row and column to return the Table!")
+            //     else {
+            //         output = "";
+            //         output += "<table border=1>";
+            //         for(let i = 1; i <= rows; i++) {
+            //             output += "<tr>";
+            //             for(let j = 1; j <= cols; j++) {
+            //                 output += "<td>" + i + "" + j + "</td>";
+            //             }
+            //             output += "</tr>";
+            //         }
+            //         output += "</table>";
+
+            //         return output;
+            //     }
+
+            // }
+
+            // document.write(generateTable(rows, cols));
+            // temp = generateTable(2, 8);
+            // document.write(temp);
+            // generateTable(0, 0);
+            // generateTable(-1, 0);
+            // generateTable('9', "Dineh");
+        </script>
+        <noscript>JavaScript should be enabled for the functionality to work!</noscript>
+
+    </body>
+</html>
