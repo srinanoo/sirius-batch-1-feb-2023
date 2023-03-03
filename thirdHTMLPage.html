@@ -6,38 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- <link href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/blitzer/theme.min.css" integrity="sha512-hZOcPNReWEUnOew9FRdj5KbItrLTrNix1oDe/h18Om/n+dmeszDZ8fV0jWCsFDOiZagIrrg0OORYYZSAv4Iu0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="assests/css/newstyles.css" rel="stylesheet">
+
     <style>
-        #div1 {
-            color: red;
-            background-color: yellow;
-            display: flex;
-            flex-wrap: wrap;
+        /* ul {
+            list-style: none;
+            padding: 0;
         }
-        #div1 div {
-            background-color: purple;
-            color: pink;
-            margin: 5px;
+        li {
+            display: inline-block;
         }
-        .blue {
-            color: blue;
-            background-color: aqua;
-        }
+        a {
+            text-decoration: none;
+            color: black;
+        } */
     </style>
 </head>
 <body>
+
+    <h1>This is a test message</h1>
+
+    <p>This is a paragraph </p>
+
+    <!-- <div>This is a div Container</div> -->
+
+    <nav>
+        <ul>
+            <li>
+                <a href="">Test</a>
+            </li>
+            <li>
+                <a href="">Test</a>
+            </li>
+            <li>
+                <a href="">Test</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="div1">
+        Content 1
+    </div>
+    <div class="div2">
+        Content 2
+    </div>
+    
     
     <!-- <div>Div 1 Container</div>
     <p id="p2">Paragraph 1 Container</p>
     <h3 class="h3">Heading 3 Container</h3>
     <input type="text" id="txt1" value="Dinesh"> -->
 
+    <!-- <p>Date: <input type="text" id="datepicker" size="30"></p>
+    <p>Animations:<br>
+        <select id="anim">
+          <option value="show">Show (default)</option>
+          <option value="slideDown">Slide down</option>
+          <option value="fadeIn">Fade in</option>
+          <option value="blind">Blind (UI Effect)</option>
+          <option value="bounce">Bounce (UI Effect)</option>
+          <option value="clip">Clip (UI Effect)</option>
+          <option value="drop">Drop (UI Effect)</option>
+          <option value="fold">Fold (UI Effect)</option>
+          <option value="slide">Slide (UI Effect)</option>
+          <option value>None</option>
+        </select>
+      </p>
+
     <input type="text" id="txtNation" placeholder="Nation"><br>
-    <input type="text" id="txtPopulation" placeholder="Population"><br><br>
-    <div id="div1"></div>
+    <input type="text" id="txtPopulation" placeholder="Population"><br><br>-->
+    <div id="div1"></div> 
     <button id="btnClick">Click</button>
 
+    
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <script type="module">
+        // import {data} from "./assests/js/scripts.js"
+        // console.log(data);
     //    $(document).ready(function() {
     //     console.log("jQuery has been started.")
     //    }); 
@@ -49,7 +99,24 @@
 
     // console.log(document.querySelector("#txt1").value);
 
+    // console.log(document.readyState);
+
+    // window.addEventListener("load", ()=> console.log("window on load"));
+    // // document.onload = ()=> console.log("document on load");
+
+    // window.addEventListener('DOMContentLoaded', (event) => {
+    //     console.log('DOM fully loaded and parsed');
+
+    //     console.log(document.readyState);
+    // });
+
     jQuery(document).ready(function($) {
+        
+        // $( "#datepicker" ).datepicker();
+        // $( "#anim" ).on( "change", function() {
+        //     $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+        // });
+
         // console.log($("div").text());
         // console.log($("#p2").text());
         // console.log($(".h3").text());
@@ -64,7 +131,86 @@
         //     $("div").removeClass("div1");
         // })
 
-        $("#btnClick").click(function() {
+        $("#btnClick").click(async function() {
+            // fetch("https://catfact.ninja/fact")
+            //     .then(data => data.json())
+            //     .then(data => console.log(data));
+
+            // var data = await fetch("https://catfact.ninja/fact");
+            // var dataJSON = await data.json();
+            // console.log(dataJSON);
+
+            // console.log(data);
+
+            function showOutput(results) {
+                document.querySelector("#div1").innerHTML = results;
+            }
+
+            let data = new Promise(function(resolve, reject) {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "https://catfact.ninja/fact");
+                xhr.onload = function() {
+                    if(xhr.status == 200) {
+                        resolve(xhr.response);
+                    } else {
+                        reject("Error");
+                    }
+                }
+                xhr.send();
+            });
+            data.then(
+                function(resolve) {
+                    showOutput(resolve);
+                },
+                function(reject) {
+                    showOutput(reject);
+                }
+            )
+            
+            
+            
+            
+            
+            
+
+
+
+
+
+
+            
+            
+            
+            // var data = await fetch("https://catfact.ninja/fact");
+            // var dataJSON = await data.json();
+            // console.log(dataJSON);
+
+            // fetch("https://catfact.ninja/fact");
+            // .then(data=>data.json())
+            // .then(data => console.log(data));
+
+
+
+
+
+            // function myDisplayer(some) {
+            //     document.getElementById("div1").innerHTML = some;
+            // }
+
+            // var data = new Promise(function(resolve, reject) {
+            //     var xhr = new XMLHttpRequest();
+            //     xhr.open("GET", "https://catfact.ninja/fact");
+            //     xhr.onload = function() {
+            //         (xhr.status == 200) ? resolve(xhr.response) : reject(xhr.status);
+            //     }
+            //     xhr.send();
+            // });
+
+            // data.then(
+            //     function(val) { myDisplayer(val) },
+            //     function(error) { myDisplayer(error) }
+            // )
+
             // $("#div1").load("sample.html");
 
             // $.ajax(
@@ -83,46 +229,46 @@
             //     }
             // )
 
-            var button = document.createElement("button");
-            button.innerHTML = "New Button";
-            $("#div1").append("<p>This is a test Paragraph</p>");
+        //     var button = document.createElement("button");
+        //     button.innerHTML = "New Button";
+        //     $("#div1").append("<p>This is a test Paragraph</p>");
 
-            varNation = $("#txtNation").val();
-            varPopulation = $("#txtPopulation").val();
+        //     varNation = $("#txtNation").val();
+        //     varPopulation = $("#txtPopulation").val();
 
-            console.log(varNation, "varNation");
-            console.log(varPopulation, "varPopulation");
+        //     console.log(varNation, "varNation");
+        //     console.log(varPopulation, "varPopulation");
 
-            if(varNation!="" && varPopulation!="") {
-                $.ajax(
-                    {
-                        url: "https://datausa.io/api/data?drilldowns="+varNation+"&measures="+varPopulation,
-                        type: "GET",
-                        // data: {FormData}
-                        beforeSend: function() {
-                            $('#btnClick').after('<div class="wait">&nbsp;<img src="assests/images/ajax-loader.gif" alt="" /></div>');
-                        },
-                        complete: function() {
-                            $('.wait').remove();
-                        },
-                        success: function(data) {
-                            console.log(data);
-                            output = "";
-                            for(temp in data.data) {
-                                console.log(data.data[temp]);
-                                output += "<div class='stats'>"
-                                    output += "<p>Nation: "+data.data[temp].Nation+"</p>";
-                                    output += "<p>Population: "+data.data[temp].Population+"</p>";
-                                output += "</div>"
-                            }
-                            $("#div1").html(output);
-                        },
-                        error: function(err) {
-                            console.log(err.responseText)
-                        }
-                    }
-                )
-            }
+        //     if(varNation!="" && varPopulation!="") {
+        //         $.ajax(
+        //             {
+        //                 url: "https://datausa.io/api/data?drilldowns="+varNation+"&measures="+varPopulation,
+        //                 type: "GET",
+        //                 // data: {FormData}
+        //                 beforeSend: function() {
+        //                     $('#btnClick').after('<div class="wait">&nbsp;<img src="assests/images/ajax-loader.gif" alt="" /></div>');
+        //                 },
+        //                 complete: function() {
+        //                     $('.wait').remove();
+        //                 },
+        //                 success: function(data) {
+        //                     console.log(data);
+        //                     output = "";
+        //                     for(temp in data.data) {
+        //                         console.log(data.data[temp]);
+        //                         output += "<div class='stats'>"
+        //                             output += "<p>Nation: "+data.data[temp].Nation+"</p>";
+        //                             output += "<p>Population: "+data.data[temp].Population+"</p>";
+        //                         output += "</div>"
+        //                     }
+        //                     $("#div1").html(output);
+        //                 },
+        //                 error: function(err) {
+        //                     console.log(err.responseText)
+        //                 }
+        //             }
+        //         )
+        //     }
 
             
 
@@ -151,10 +297,6 @@
         //         console.log(data.length)
         //     }
         // }});
-
-    //     fetch("https://catfact.ninja/fact")
-    //         .then(data=>data.json())
-    //         .then(data => console.log(data));
     });
 
     //    $(function() {

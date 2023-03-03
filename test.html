@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .row .cols {
+            width: 33.3333333%;
+            padding: 5px;
+        }
+        .row .cols div {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="div1"></div>
+
+    <script>
+        cols = 3;
+        rows = 10;
+
+        output = "";
+        obj = [
+            {
+                id: 1,
+                name: "Dinesh"
+            },
+            {
+                id: 2,
+                name: "Tony"
+            },
+            {
+                id: 3,
+                name: "Maamathi"
+            }
+        ]
+
+        for(i=1; i<=rows; i++) {
+            output += "<div class='row'>";
+            for(j=1; j<=cols; j++) {
+                output += "<div class='cols'><div>";
+                for(temp in obj) {
+                    output += `<p>${obj[temp].id}</p>`;
+                    output += `<p>${obj[temp].name}</p>`;
+                }
+                output += "</div></div>";
+            }
+            output += "</div>";
+        }
+        document.querySelector("#div1").innerHTML = output;
+    </script>
+</body>
+</html>

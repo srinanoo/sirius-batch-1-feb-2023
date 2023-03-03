@@ -1,0 +1,43 @@
+$primary: red;
+$secondary: blue;
+
+h1 {
+    background-color: $secondary;
+    color: $primary;
+}
+
+p {
+    $primary: orange; /* add !global to make this variable global overriding previous declaration */
+    color: $primary;
+    background-color: $secondary;
+}
+
+div {
+    color: $primary;
+    background-color: $secondary;
+}
+
+/* nesting elements */
+nav {
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+        background-color: $primary;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// font: {
+//     decoration: none;
+//     transform: uppercase;
+// }

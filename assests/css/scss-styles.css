@@ -1,0 +1,33 @@
+h1 {
+  background-color: blue;
+  color: red;
+}
+
+p {
+  /* add !global to make this variable global overriding previous declaration */
+  color: orange;
+  background-color: blue;
+}
+
+div {
+  color: red;
+  background-color: blue;
+}
+
+/* nesting elements */
+nav ul {
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+  background-color: red;
+}
+nav li a {
+  text-decoration: none;
+}
+nav li a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=scss-styles.css.map */

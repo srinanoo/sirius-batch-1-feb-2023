@@ -1,0 +1,108 @@
+@use "sass:map";
+@use "sass:string";
+
+@import "reset";
+@import "color";
+@import "colors_temp";
+
+h1 {
+    color: $primary;
+    background-color: $secondary;
+}
+
+p {
+    color: $secondary;
+    background-color: $primary;
+}
+
+nav {
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+
+            a {
+                text-decoration: none;
+                color: $primary;
+
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}
+
+//.... @mixing
+@mixin sample-text {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+p {
+    @include sample-text;
+    color: $primary;
+}
+
+@mixin flex_box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.row1 {
+    @include flex-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.row2 {
+    @include flex-box;
+    justify-content: end;
+}
+
+@mixin margins($top: 5px, $right: 5px, $bottom: 5px, $left: 5px) {
+    margin: $top $right $bottom $left;
+}
+
+div {
+    @include margins(10px, 5px, 10px, 5px);
+}
+
+p {
+    @include margins();
+}
+
+.flex-box {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.section {
+    @extend .flex-box;
+    background-color: $primary;
+    color: $secondary;
+}
+
+$theme-colors: (
+  "success": #28a745,
+  "info": #17a2b8,
+  "warning": #ffc107,
+);
+.alert {
+  background-color: map.get($theme-colors, "success");
+}
+
+$pad10: 10;
+.pad10 {
+    padding: string.unquote(50 * $pad10 + "px");
+}
+
+$width: 0, 10, 20, 25, 33, 50, 70, 75, 100;
+@each $size in $width {
+    .w-#{$size} {
+        width: string.unquote($size + "%");
+    }
+}

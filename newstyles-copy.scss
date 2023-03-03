@@ -1,0 +1,137 @@
+// @use "sass:math";
+// @use "sass:map";
+// @use "sass:color";
+// @use "sass:meta";
+// @use "sass:string";
+
+// @import "reset";
+// @import "colors";
+
+h1 {
+    color: $primary;
+    background-color: $secondary;
+}
+
+p {
+    color: $secondary;
+    background-color: $primary;
+}
+
+nav {
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+
+            a {
+                text-decoration: none;
+                color: $primary;
+
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}
+//.... @mixing
+// @mixin sample-text {
+//     text-decoration: underline;
+//     text-transform: uppercase;
+// }
+// p { @include sample-text; background-color: red; }
+
+// @mixin sample-text($marginTopBottom, $marginRightLeft) {
+//     text-decoration: underline;  text-transform: uppercase;
+//     margin: $marginTopBottom $marginRightLeft;
+// }
+// p { @include sample-text(10px, 20px); background-color: red; }
+// div { @include sample-text(10px, 10px); background-color: red; }
+
+// @mixin sample-text($marginTopBottom: 10px, $marginRightLeft: 10px) {
+//     text-decoration: underline;  text-transform: uppercase;
+//     margin: $marginTopBottom $marginRightLeft;
+// }
+// p { @include sample-text(5px, 5px); background-color: red; }
+// div { @include sample-text(8px, 8px); background-color: red; }
+// h1 { @include sample-text; background-color: red; }
+
+//.... @extend
+// .flex { 
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+// .div1 { 
+//     @extend .flex;
+//     justify-content: center;
+// }
+
+
+//.... using the map.get method
+// $theme-colors: (
+//   "success": #28a745,
+//   "info": #17a2b8,
+//   "warning": #ffc107,
+// );
+// .alert {
+//   background-color: map.get($theme-colors, "warning");
+// }
+
+
+//.... to do variable calculation
+// $_pad10: 10px;
+// div {
+//     padding: 50px * $_pad10;
+// }
+
+
+//.... to add dynamic columns with calculation
+// @mixin _columns($count: 1) {
+//     // width: math.div(100, $count) * 1%;
+//     // or
+//     // width: string.unquote(math.div(100, $count) + "%");
+// }
+// div {
+//     @include _columns(6);
+// }
+
+//.... @function
+// $count: 10;
+// @function randomBG($red, $green, $blue) {
+//     @return rgba($red, $green, $blue);
+// }
+// @for $i from 0 to $count {
+//     div-#{$i} {
+//         background-color: randomBG(random(255), random(255), random(255));
+//     }
+// }
+
+
+//.... flow controls
+//.... @if...@else
+//.... loading another CSS with condition
+// div {
+//     @include meta.load-css("colors", $with: ("bg": false));
+// }
+
+//.... @each
+// $width: 0, 25, 50, 75, 100;
+// @each $size in $width {
+//     .w-#{$size} {
+//         width: $size * 1%;
+//     }
+// }
+
+//.... @for
+// @mixin randomBG() {
+//     background-color: rgba(random(255), random(255), random(255), random(1));
+// }
+// @for $i from 0 to 10 {
+//     div-#{$i} {
+//         @include randomBG();
+//     }
+// }
+
+

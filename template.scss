@@ -1,0 +1,153 @@
+@use "sass:string";
+@use "sass:map";
+
+$white: #fff;
+$black: #000;
+$blue: rgba(49, 49, 226, 0.711);
+$greenyellow: greenyellow;
+
+@mixin margin-bottom-40 {
+    margin-bottom: 40px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+body {
+    background-color: $black;
+    color: $white;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.flex-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cols-3 {
+    @extend .flex-box;
+
+    @include margin-bottom-40;
+
+    div {
+        width: 33.33333333%;
+    
+        img {
+            padding: 10px;
+        }
+    }
+}
+
+.cols-6 div {
+    width: 16.66666666%;
+    margin-bottom: 100px;
+
+    img {
+        padding: 10px;
+        max-height: 150px;
+    }
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+.justify-content-evenly {
+    justify-content: space-evenly;
+}
+.text-center div, .text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+
+.title1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    
+    span {
+        font-weight: bold;
+    }
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 100px;
+
+    span {
+        color: $blue;
+    }
+}
+
+.bigname {
+    @include margin-bottom-40;
+    
+    &::after {
+        content: " show off";
+        color: $greenyellow;
+    }
+}
+.dash {
+    @include margin-bottom-40;
+
+    div:first-child {
+        width: 20px;
+        height: 2px;
+        background-color: $white;
+        margin-right: 10px;
+    }
+
+    div:last-child {
+        width: 200px;
+        height: 2px;
+        background-color: $white;
+    }
+}
+.socialicons {
+    @include margin-bottom-40;
+
+    img {
+        margin-right: 5px;
+    }
+}
+.m-1 {
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.footer {
+    margin-bottom: 100px;
+}
+
+$width: 0, 10, 20, 25, 33, 50, 70, 75, 100;
+@each $size in $width {
+    .w-#{$size} {
+        width: string.unquote($size + "%");
+    }
+}
+
+$widthC: (
+    "0":0, 
+    "10":10, 
+    "20":20, 
+    "25":25, 
+    "33":33, 
+    "50":50, 
+    "70":70, 
+    "75":75, 
+    "100":100
+);
+
+@media only screen and (max-width: 576px) {
+    .cols-3 div {
+        width: string.unquote(map.get($widthC, "50")+"%");
+    }
+}

@@ -1,0 +1,11 @@
+$primary: red;
+$secondary: blue;
+$bg: false !default;
+
+colors {
+    @if $bg {
+        background-color: $secondary;
+    } @else {
+        background-color: $primary;
+    }
+}
